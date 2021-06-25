@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Contact Form 08</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">CONFUSED ABOUT YOUR HOUSE PRICE?</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="wrapper img" style="background-image: url(./static/images/img.jpg);">
+						<div class="row">
+							<div class="col-md-9 col-lg-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">GET THE BEST PRICE HERE!</h3>
+									<div id="form-message-warning" class="mb-4"></div>
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+									<form action="{{ url_for('predict')}}" method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="area">Area in square feet</label>
+													<input type="text" class="form-control" name="area" id="area" placeholder="500">
+												</div>
+											</div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label" for="no">No. of Bedrooms</label>
+                          <input type="Bedrooms" class="form-control" name="no" id="no" placeholder="4">
+                        </div>
+                      </div>
+  											<div class="col-md-6">
+  												<div class="form-group">
+  													<label class="label" for="resale">Resale</label>
+  													<input type="text" class="form-control" name="resale" id="resale" placeholder="0">
+  												</div>
+  											</div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="label" for="gym">Gymnasium</label>
+                            <select name="gym" class="form-control" id="gym">
+                              <option value="" disabled selected>Select your option</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="label" for="pool">Swimming Pool</label>
+                            <select name="Pool" class="form-control" id="Pool">
+                              <option value="" disabled selected>Select your option</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="label" for="secure">24X7 Security</label>
+                            <select name="secure" class="form-control" id="secure">
+                              <option value="" disabled selected>Select your option</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="label" for="car">Car Parking</label>
+                            <select name="car" class="form-control" id="car">
+                              <option value="" disabled selected>Select your option</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="label" for="Lift">Lift Available</label>
+                            <select name="Lift" class="form-control" id="Lift">
+                              <option value="" disabled selected>Select your option</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                            </select>
+                          </div>
+                        </div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="City">City</label>
+                          <select name="City" class="form-control" id="City">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="0">Banglore</option>
+                            <option value="1">Chennai</option>
+                            <option value="2">Delhi</option>
+                            <option value="3">Hyderabad</option>
+                            <option value="4">Kolkata</option>
+                            <option value="5">Mumbai</option>
+                          </select>
+												</div>
+											</div>
+
+
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Predict Price" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+                  <br>
+                 <br>
+                 {{ prediction_text }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
